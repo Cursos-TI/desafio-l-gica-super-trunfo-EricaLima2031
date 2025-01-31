@@ -1,11 +1,12 @@
 #include <stdio.h>
+# include <string.h>
+  
+   #define NUM_CARTAS 5
 
-int main() {
-    
-   printf ("Desafio SuperTrunfo! \n ");
+{
+// logicaSuperTrunfo
+/* 31/01/2025 */
 
-
-char nome [50];
 char estado [50];
 int codigo;
 int populacao;
@@ -13,41 +14,88 @@ int area;
 double pib;
 
 } Cartas;
+void cadastroCarta (Carta, cartas[], int indice) {
+printf("Cadastro da carta %d\n", indice + 1);
 
-printf (" Digite o nome da Cidade! ");
-scanf ("%s", nome, 50);
-scanf ("%s", estado, 50);
-printf (" Digite o codigo da Cidade: ");
-scanf ("%d", &codigo);
-printf (" Digite a populacao da cidade: ");
-scanf ("%d", &populacao);
-printf (" Digite area da cidade! ");
-scanf ("%d", &area);
-printf (" Digite o PIB da cidade! ");
-scanf ("%lf", &pib);
+printf ("Estado: ");
+scanf ("%s" cartas[indice].estado);
 
-void CadastrarCartas(Cartas *cartas);
-printf (" Digite o nome da Cidade: ");
-scanf ("%s", cartas ->nome, 50);
-printf (" Digite o estado da cidade ");
-scanf ("%s", cartas ->estado, 50);
-printf (" Digite o codigo da cidade: ");
-scanf ("%d", &cartas  ->codigo);
-printf (" Digite a populacao da Cidade: ");
-scanf ("%d", &cartas  ->populacao);
-printf (" Digite a area da  cidade: ");
-scanf ("%d", &cartas  ->area);
-printf (" Digite o PIB da cidade: ");
-scanf ("%d", &cartas  ->pib);
+printf("Código da carta: ");
+scanf ("%d", &cartas[indice].codigo);
 
-void CompararCartas (Cartas *cartasA, Cartas * CartasB);
+printf ("População (em milhares): ");
+scanf ("%d", &cartas[indice].populacao);
 
-if (CartasA ->populacao > cartasB -> populacao) {
-   printf ("Cidade 1 tem maior população. \n");
-   } else {
-      printf (" Cidade 2 tem maior população. \n");
+printf("Área (em km²): ");
+scanf ("%d",&cartas[indice].area);
 
-if ( CartasA ->area > cartasB -> area){
-   
+printf ("PIB (em bilhoes de USD): ");
+scanf ("%lf", &cartas[indice].pib);
+
+printf("Cartas %d cadastrada com sucesso!\n\n"), indice +1);
 }
+
+void exibirCarta(Cartas carta) {
+   printf("Estado: %s\n", carta.estado);
+   printf ("Código: %d\n", carta.codigo");
+   printf ("Populacao: %d mil\n", carta.populacao);
+   printf ("Área: %d km²\n", carta.area);
+   printf ("PIB: %.2f bilhões de USD\n", carta.pib);
+}
+   void compararCarta (Cartas carta1, cartas carta2) {
+   printf ("Comparando %s e %s\n, carta1.estado, carta2.estado");
+    
+    // Comparar população
+    if (Carta.populacao > carta2.populacao) {
+    printf("%s tem maior população. \n", carta.estado);
+    } else if (carta1.populacao < carta2.populacao) {
+    printf ("%s tem maior população.\n", carta2.estado);
+    } else {
+    printf("Ambos os estados têm a mesma população.\n");
+    }
+
+    // Comparar área
+    if (carta1.area > carta2.area) {
+    printf ("%s tem maior área.\n", carta1.estado);
+    } else if (carta1.area < carta2.area) {
+    printf ("%s tem maior área. \n", carta2.estado);
+    } else {
+    printf ("Ambos os estados têm a mesma área. \n");
+    }
+    
+    // Comparar PIB
+    if (carta1.pib > carta2.pib) {
+    printf ("%s tem maior PIB.\n", carta1.estado);
+    } else if (carta1.pib < carta2.pib) {
+    printf ("%s tem maior PIB. \n", carta2.estado);
+    } else {
+    printf ("Ambos os estados têm a mesma PIB. \n");
+    }
+   
+   int main() {
+   printf("Desafio Super Trunfo!\n");
+
+   Cara cartas [NUM_CARTAS];
+
+   // Cadastrar as cartas
+   for (int i = 0; i < NUM_CARTAS; i++) {
+   cadastrarCarta(cartas, i);
+   }
+
+   // Exibir as cartas cadastradas
+   for (int i =0; i < NUM_CARTAS; i++) {
+   printf ("Carta %d: \n", i + 1);
+   exibirCarta(cartas[i]);
+   printf ("\n");
+   }
+
+   // Comparar duas cartas (exemplo)
+   compararCartas(cartas[i]);
+
+   return 0;
+    
+
+}
+
+
 
