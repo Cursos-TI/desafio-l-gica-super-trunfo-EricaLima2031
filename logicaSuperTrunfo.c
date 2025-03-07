@@ -1,101 +1,141 @@
 #include <stdio.h>
-# include <string.h>
-  
-   #define NUM_CARTAS 5
 
-{
-// logicaSuperTrunfo
-/* 31/01/2025 */
+int main(){
 
-char estado [50];
-int codigo;
-int populacao;
-int area;
-double pib;
+char estado1 [8], estado2 [8];
+char codigo1[4], codigo2[4];
+char nomeCidade1[50], nomeCidade2[50];
+int pontosTuristicos1, pontosTuristicos2;
+int populacao1, populacao2;
+float area1, area2;
+double pib1, pib2;
+double densidade1, densidade2;
+double pibPercapita1, pibPercapita2;
+float superPoder1, superPoder2;
 
-} Cartas;
-void cadastroCarta (Carta, cartas[], int indice) {
-printf("Cadastro da carta %d\n", indice + 1);
+// Dados da primeira cidade
 
-printf ("Estado: ");
-scanf ("%s" cartas[indice].estado);
 
-printf("Código da carta: ");
-scanf ("%d", &cartas[indice].codigo);
+printf("Digite o estado de A a H: \n");
+scanf ("%s", estado1);
 
-printf ("População (em milhares): ");
-scanf ("%d", &cartas[indice].populacao);
+printf ("Digite o codigo da cidade ex: A01: \n ");
+scanf ("%s", codigo1);
 
-printf("Área (em km²): ");
-scanf ("%d",&cartas[indice].area);
+printf("Digite o nome da Cidade: \n");
+getchar();
+fgets (nomeCidade1, sizeof(nomeCidade1), stdin);
 
-printf ("PIB (em bilhoes de USD): ");
-scanf ("%lf", &cartas[indice].pib);
+printf ("Digite a populacao: \n");
+scanf ("%i", &populacao1);
 
-printf("Cartas %d cadastrada com sucesso!\n\n"), indice +1);
-}
+printf(" Digite a area da cidade (em km²): \n");
+scanf ("%f", &area1);
 
-void exibirCarta(Cartas carta) {
-   printf("Estado: %s\n", carta.estado);
-   printf ("Código: %d\n", carta.codigo");
-   printf ("Populacao: %d mil\n", carta.populacao);
-   printf ("Área: %d km²\n", carta.area);
-   printf ("PIB: %.2f bilhões de USD\n", carta.pib);
-}
-   void compararCarta (Cartas carta1, cartas carta2) {
-   printf ("Comparando %s e %s\n, carta1.estado, carta2.estado");
-    
-    // Comparar população
-    if (Carta.populacao > carta2.populacao) {
-    printf("%s tem maior população. \n", carta.estado);
-    } else if (carta1.populacao < carta2.populacao) {
-    printf ("%s tem maior população.\n", carta2.estado);
-    } else {
-    printf("Ambos os estados têm a mesma população.\n");
-    }
+printf ("Digite o PIB da cidade: \n");
+scanf ("%lf", &pib1);
 
-    // Comparar área
-    if (carta1.area > carta2.area) {
-    printf ("%s tem maior área.\n", carta1.estado);
-    } else if (carta1.area < carta2.area) {
-    printf ("%s tem maior área. \n", carta2.estado);
-    } else {
-    printf ("Ambos os estados têm a mesma área. \n");
-    }
-    
-    // Comparar PIB
-    if (carta1.pib > carta2.pib) {
-    printf ("%s tem maior PIB.\n", carta1.estado);
-    } else if (carta1.pib < carta2.pib) {
-    printf ("%s tem maior PIB. \n", carta2.estado);
-    } else {
-    printf ("Ambos os estados têm a mesma PIB. \n");
-    }
+printf("Digite o numero de pontos turisticos: \n");
+scanf("%d", &pontosTuristicos1);
+
+printf ("Digite a densidade populacional: \n ");
+scanf ("%le", &densidade1);
+
+printf ("Digite o PIB per capita: \n");
+scanf ("%lf", &pibPercapita1);
+
+// calculo para primeira cidade
+densidade1 = (double) populacao1 / area1;
+pibPercapita1 = pib1 / populacao1;
+superPoder1 = populacao1 + area1 + pib1 + pontosTuristicos1 + pibPercapita1 + (1.0 / densidade1);
+
+// Exibicao dos dados da primeira cidade
+
+   printf("\n Carta 1:\n");
+   printf("Estado: %s\n", estado1);
+   printf("Codigo: %s\n", codigo1);
+   printf("Nome da Cidade: %s\n", nomeCidade1);
+   printf("Populacao: %d\n", populacao1);
+   printf("Área: %.2f km²\n", area1);
+   printf("PIB: %2f bilhoes de reais\n", pib1);
+   printf("Numero de pontos turisticos: %d\n", pontosTuristicos1);
+   printf("Densidade Populacional: %.2f hab/km²\n", densidade1);
+   printf("PIB per Capita: %.2f reais\n", pibPercapita1);
+
+   // Dados da segunda cidade
+
+printf("Digite o estado de A a H: \n");
+scanf ("%s", estado2);
+
+printf ("Digite o codigo da cidade ex: A01: \n ");
+scanf ("%s", codigo2);
+
+printf("Digite o nome da Cidade: \n");
+getchar();
+fgets (nomeCidade2, sizeof(nomeCidade2), stdin);
+
+printf ("Digite a populacao: \n");
+scanf ("%i", &populacao2);
+
+printf(" Digite a area da cidade (em km²): \n");
+scanf ("%f", &area2);
+
+printf ("Digite o PIB da cidade: \n");
+scanf ("%lf", &pib2);
+
+printf("Digite o numero de pontos turisticos: \n");
+scanf("%d", &pontosTuristicos2);
+
+printf ("Digite a densidade populacional: \n ");
+scanf ("%le", &densidade2);
+
+printf ("Digite o PIB per capita: \n");
+scanf ("%lf", &pibPercapita2);
+
+
+// calculo para segunda cidade
+densidade2 = (double) populacao2 / area2;
+pibPercapita2 = pib2 / populacao2;
+superPoder2 = populacao2 + area2 + pib2 + pontosTuristicos2 + pibPercapita2 + (1.0 / densidade2);
+
+// Exibicao dos dados da segunda cidade
+
+   printf("\n Carta 2:\n");
+   printf("Estado: %s\n", estado2);
+   printf("Codigo: %s\n", codigo2);
+   printf("Nome da Cidade: %s\n", nomeCidade2);
+   printf("Numero de pontos turisticos: %d\n", pontosTuristicos2);
+   printf("Populacao: %d\n", populacao2);
+   printf("Área: %.2f km²\n", area2);
+   printf("PIB: %2f bilhoes de reais\n", pib2);
+   printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
+   printf ("PIB per Capita: %.2f reais\n", pibPercapita2);
+
+   // Comparacao e exibicao dos resultados
+   printf("\n Comparacao de Cartas:\n");
+   printf("Populacao: carta 1 venceu (%d)\n", populacao1 > populacao2);
+   printf("Area: carta 1 venceu (%d)\n", area1 > area2);
+   printf("PIB: carta 1 venceu (%d)\n", pib1 > pib2);
+   printf("Pontos Turisticos: carta 1 venceu (%d)\n", pontosTuristicos1 > pontosTuristicos2);
+   printf("Desindade populaciona: carta 1 venceu(%d)\n", densidade1 < densidade2);
+   printf("PIB per capita: carta 1 venceu (%d)\n", pibPercapita1 > pibPercapita2);
+   printf("Super poder: carta 1 venceu (%d)\n", superPoder1 > superPoder2);
    
-   int main() {
-   printf("Desafio Super Trunfo!\n");
-
-   Cara cartas [NUM_CARTAS];
-
-   // Cadastrar as cartas
-   for (int i = 0; i < NUM_CARTAS; i++) {
-   cadastrarCarta(cartas, i);
-   }
-
-   // Exibir as cartas cadastradas
-   for (int i =0; i < NUM_CARTAS; i++) {
-   printf ("Carta %d: \n", i + 1);
-   exibirCarta(cartas[i]);
-   printf ("\n");
-   }
-
-   // Comparar duas cartas (exemplo)
-   compararCartas(cartas[i]);
-
+   printf("1 para verdadeiro – Carta 1 vence – e 0 para falso – Carta 2 vence");
+  
    return 0;
     
-
 }
 
+
+
+// Calcular a Densidade Populacional e o PIB per Capita: Assim como no nível intermediário, calcule e armazene esses valores.
+ 
+// Calcular o Super Poder: Para cada carta, calcule o "Super Poder" somando todos os atributos numéricos (população, área, PIB, número de pontos turísticos, PIB per capita e o inverso da densidade populacional – quanto menor a densidade, maior o "poder"). Armazene o Super Poder como float. Atenção: Preste muita atenção na conversão de tipos ao somar valores de tipos diferentes!
+ 
+// Comparar as Cartas: Compare as duas cartas atributo por atributo (exceto estado, código e nome), incluindo o Super Poder. Lembre-se: para a densidade populacional, a carta com o menor valor vence; para os demais atributos (incluindo Super Poder), a carta com o maior valor vence.
+ 
+//Exibir os Resultados das Comparações: Para cada atributo, imprima na tela qual carta venceu (Carta 1 ou Carta 2), exibindo o resultado da comparação (1 para verdadeiro – Carta 1 vence – e 0 para falso – Carta 2 vence).
+ 
 
 
