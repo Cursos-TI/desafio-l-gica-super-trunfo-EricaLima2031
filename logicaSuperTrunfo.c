@@ -7,57 +7,69 @@ int main() {
     char codigo1[4], codigo2[4];
     char nomeCidade1[50], nomeCidade2[50];
     int pontosTuristicos1, pontosTuristicos2;
-    int populacao1, populacao2;
-    float area1, area2;
-    float pib1, pib2;
-    float densidade1, densidade2;
+    float populacao1, populacao2, area1, area2, pib1, pib2, densidade1, densidade2;
     float pibPercapita1, pibPercapita2;
     float somaCarta1, somaCarta2;
+    float superPoder1,superPoder2;
     int escolha1, escolha2;
 
     // Entrada de dados da primeira cidade
     printf("Digite o estado de A a H (Carta 1): \n");
     scanf("%s", estado1);
+
     printf("Digite o codigo da cidade ex: A01 (Carta 1): \n");
     scanf("%s", codigo1);
+
     printf("Digite o nome da Cidade (Carta 1): \n");
     getchar();
     fgets (nomeCidade1, sizeof(nomeCidade1), stdin);
 
     printf("Digite a populacao (Carta 1): \n");
-    scanf("%d", &populacao1);
-    printf("Digite a area (em km²) (Carta 1): \n");
+    scanf("%f", &populacao1);
+
+    printf("Digite a area em km² (Carta 1): \n");
     scanf("%f", &area1);
+
     printf("Digite o PIB (em bilhões) (Carta 1): \n");
     scanf("%f", &pib1);
+
     printf("Digite o número de pontos turísticos (Carta 1): \n");
     scanf("%d", &pontosTuristicos1);
 
     // Cálculo para Carta 1
-    densidade1 = (float) populacao1 / area1;
+    densidade1 = populacao1 / area1;
     pibPercapita1 = pib1 / populacao1;
+    superPoder2 = populacao2 + area2 + pib2 + pontosTuristicos2 + pibPercapita2 + (1.0 / densidade2);
+
 
     // Entrada de dados da segunda cidade
     printf("Digite o estado de A a H (Carta 2): \n");
     scanf("%s", estado2);
+
     printf("Digite o codigo da cidade ex: A01 (Carta 2): \n");
     scanf("%s", codigo2);
+
     printf("Digite o nome da Cidade (Carta 2): \n");
     getchar();
     fgets (nomeCidade2, sizeof(nomeCidade2), stdin);
 
     printf("Digite a populacao (Carta 2): \n");
-    scanf("%d", &populacao2);
-    printf("Digite a area (em km²) (Carta 2): \n");
+    scanf("%f", &populacao2);
+
+    printf("Digite a area em km² (Carta 1): \n");
     scanf("%f", &area2);
+
     printf("Digite o PIB (em bilhões) (Carta 2): \n");
     scanf("%f", &pib2);
+
     printf("Digite o número de pontos turísticos (Carta 1): \n");
     scanf("%d", &pontosTuristicos2);
    
     // Cálculo para Carta 2
-    densidade2 = (float) populacao2 / area2;
+    densidade2 = populacao2 / area2;
     pibPercapita2 = pib2 / populacao2;
+    superPoder2 = populacao2 + area2 + pib2 + pontosTuristicos2 + pibPercapita2 + (1.0 / densidade2);
+
 
     // Escolha do primeiro atributo
     printf("\nEscolha o primeiro atributo para comparar:\n");
